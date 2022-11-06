@@ -7,6 +7,7 @@ Index:
 
 # Team Members: 
 - Ana Lucía Ahedo Reyes (TEC)
+- Victoria Rodríguez de León (TEC) 
 - Antonio Machorro Herrera (TEC)
 - Arturo Carballo Arias (TEC)
 - Davi Xie (ITA)
