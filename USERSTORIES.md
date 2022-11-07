@@ -17,6 +17,7 @@ As Antonio Rafael Cedillo Rodríguez from Tecnologíco de Monterrey, i want to b
 
 # Arturo Carballo Arias A01662245 (TEC) 
 
+As Arturo Carballo Arias from Tecnologico de Monterrey I want to cooperate with my teammates using our knowledge to find solutions to these problematics.
 
 
 
