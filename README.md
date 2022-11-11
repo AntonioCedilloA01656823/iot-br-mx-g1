@@ -3,8 +3,8 @@
 Index:
 - Team Members
 - Teachers
-- Challenge: Description and Motivation)
-- Challenge: Methodology and Concepts)
+- Challenge: Description 
+- Challenge: Methodology and Motivation
 
 ## Team Members: 
 
@@ -103,7 +103,7 @@ The partner university is the Instituto Tecnológico de Aeronáutica, which is a
 
 
 
-# Challenge: Scenario
+## Challenge: Scenario
 
 Year by year, disaster and crisis strike societies all over the world, leaving people and communities without resources. These include natural disasters such as tornados, earthquakes and hurricanes. Or human made such as shootings, terrorist attacks and chemical spills. The problematic tackled in this challenge is to create a solution focused on helping survivors in an aftermath of a hurricane, this would be really useful and a project that could save lives in tropical countries such as Brazil and Mexico, where flooding related experiences and it's estimated that in the future will augment thanks to events such as global warming, as seen in this following map:
 
@@ -113,7 +113,7 @@ If these predictions come to be true, there will be an increase in fatalities, f
 
 
 
-
+## Challenge: Method and Motivation
 
 
 # References 
