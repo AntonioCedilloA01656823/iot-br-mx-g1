@@ -109,8 +109,7 @@ Year by year, disaster and crisis strike societies all over the world, leaving p
 
 <a name="#floodPrediction"><img src ="https://www.the-digital-insurer.com/wp-content/uploads/2021/08/WTW-1.jpeg" alt = "floodMap"> </a>
 
-If these predictions come to be true, there will be an increase in fatalities, financial, structural and social losses in these countries, 
-
+If these predictions come to be true, there will be an increase in fatalities, financial, structural and social losses in these countries, and if the flooding intensifies it will cause even more electrical blackouts, rendering communications useless and difficulting the ways to get help and resources thanks to the risk
 
 
 
