@@ -9,6 +9,8 @@ According to the situation description and motivations, we accorded to use the f
 
 - "As an operator, I want to be able to see a dashboard containing all of the messages sent by the the survivors, their locations, and severity levels, so that I can plan for the rescue operations in an effective way."
 
+- "As a flood survivor, I want the system to be able to determine which course of action is best for my situation, sending the appropriate resources depending on the type of damages that occurred."
+
 
 
 ## Acceptance Criteria
