@@ -118,10 +118,9 @@ If these predictions come to be true, there will be an increase in fatalities, f
 
 ## Challenge: Motivation and Method
 
-The motivation behind this challenge is to solve the problematic of low communication and resource gathering during and after a flooding incurring disaster, which causes various lifes to be lost thabks to not being to ask for help in the disaster or getting help or resources after the flooding and giving out before any help arrives. If this solution is applied in real life, various lifes and help could be spread in an even wider range in these two countries, where the risk of flooding is present in all of the states, as stated in the following maps. 
+The motivation behind this challenge is to solve the problematic of low communication and resource gathering during and after a flooding incurring disaster, which causes various lifes to be lost thabks to not being to ask for help in the disaster or getting help or resources after the flooding and giving out before any help arrives. If this solution is applied in real life, various lifes and help could be spread in an even wider range in these two countries, where the risk of flooding is present in all of the states of these two countries.
 
-<a name = "#BrazilRisk"> <img src >
-  
+
 The methodology of this project follows 4 steps:
   
 1.**Project setup:** This step consists in setting up the github repository and project, adding the required files (user stories and README).
