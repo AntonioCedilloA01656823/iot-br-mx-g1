@@ -109,11 +109,36 @@ Year by year, disaster and crisis strike societies all over the world, leaving p
 
 <a name="#floodPrediction"><img src ="https://www.the-digital-insurer.com/wp-content/uploads/2021/08/WTW-1.jpeg" alt = "floodMap"> </a>
 
-If these predictions come to be true, there will be an increase in fatalities, financial, structural and social losses in these countries, and if the flooding intensifies it will cause even more electrical blackouts, rendering communications useless and difficulting the ways to get help and resources thanks to the risk of landslides and water currents caused by the flood.
+If these predictions come to be true, there will be an increase in fatalities, financial, structural and social losses in these countries, and if the flooding intensifies it will cause even more electrical blackouts, rendering communications useless and difficulting the ways to get help and resources thanks to the risk of landslides and water currents caused by the flood, such as we can see in the following video present in the original challenge description: 
+
+[![IMAGE_ALT](https://img.youtube.com/vi/2RKeZk8qudA/0.jpg)](https://www.youtube.com/embed/2RKeZk8qudA)
 
 
 
-## Challenge: Method and Motivation
+
+## Challenge: Motivation and Method
+
+The motivation behind this challenge is to solve the problematic of low communication and resource gathering during and after a flooding incurring disaster, which causes various lifes to be lost thabks to not being to ask for help in the disaster or getting help or resources after the flooding and giving out before any help arrives. If this solution is applied in real life, various lifes and help could be spread in an even wider range in these two countries, where the risk of flooding is present in all of the states, as stated in the following maps. 
+
+<a name = "#BrazilRisk"> <img src >
+  
+The methodology of this project follows 4 steps:
+  
+1.**Project setup:** This step consists in setting up the github repository and project, adding the required files (user stories and README).
+  
+2.**Client and Edge stage:** Consits on the setup of the brokers and android client. 
+  
+3.**Cloud stage:** Consists on the implementation of a cloud broker, and the integration of a SQL database into it.
+  
+4.**Final presentation:** Consists on the presentation of the project in a workshop.
+
+
 
 
 # References 
+
+- https://github.com/kabartsjc/gsl-iot-2022/blob/main/README.md
+- https://tec.mx/es
+- https://tec.mx/es
+- https://mapas.inecc.gob.mx/ICCEM/mapas/ve_riesgos.html
+- https://thinkhazard.org/es/report/37-brazil/FL
