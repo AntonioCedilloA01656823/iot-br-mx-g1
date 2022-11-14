@@ -11,6 +11,8 @@ According to the situation description and motivations, we accorded to use the f
 
 - "As a flood survivor, I want the system to be able to determine which course of action is best for my situation, sending the appropriate resources depending on the type of damages that occurred."
 
+-"As a flood survivor, I want a system that is efficient and easy to use, in addition to being 100% functional when is used"
+
 
 
 ## Acceptance Criteria
