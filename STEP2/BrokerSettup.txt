@@ -1,0 +1,5 @@
+ssh iot@20.196.223.5
+iot@20.196.223.5's password: Iot123456789
+sudo su
+apt-get update
+apt-get upgrade
