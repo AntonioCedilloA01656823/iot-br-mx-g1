@@ -1,0 +1,53 @@
+// Resource link: /subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourcegroups/G1-VM_group/providers/Microsoft.Compute/virtualMachines/G1-VM
+
+{
+    "name": "G1-VM",
+    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/G1-VM_group/providers/Microsoft.Compute/virtualMachines/G1-VM",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "koreacentral",
+    "properties": {
+        "vmId": "f8a0692a-36e8-4061-a848-eb5edac6d0f9",
+        "hardwareProfile": {
+            "vmSize": "Standard_B1s"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "canonical",
+                "offer": "UbuntuServer",
+                "sku": "16.04-LTS",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "G1-VM_OsDisk_1_5eb687dfe49f49d7bb4d1b233665592e",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/G1-VM_group/providers/Microsoft.Compute/disks/G1-VM_OsDisk_1_5eb687dfe49f49d7bb4d1b233665592e"
+                },
+                "diskSizeGB": 64
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "G1-VM",
+            "adminUsername": "g1iot",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": false
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/G1-VM_group/providers/Microsoft.Network/networkInterfaces/g1-vm15",
+                    "properties": {
+                        "deleteOption": "Detach"
+                    }
+                }
+            ]
+        },
+        "provisioningState": "Succeeded"
+    }
+}
