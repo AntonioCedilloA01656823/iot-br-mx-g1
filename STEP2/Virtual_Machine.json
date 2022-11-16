@@ -1,12 +1,12 @@
-// Resource link: /subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourcegroups/G1-VM_group/providers/Microsoft.Compute/virtualMachines/G1-VM
+///subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourcegroups/mqttLab2/providers/Microsoft.Compute/virtualMachines/iot-linux
 
 {
-    "name": "G1-VM",
-    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/G1-VM_group/providers/Microsoft.Compute/virtualMachines/G1-VM",
+    "name": "iot-linux",
+    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/mqttLab2/providers/Microsoft.Compute/virtualMachines/iot-linux",
     "type": "Microsoft.Compute/virtualMachines",
     "location": "koreacentral",
     "properties": {
-        "vmId": "f8a0692a-36e8-4061-a848-eb5edac6d0f9",
+        "vmId": "0c33ecbd-adce-4531-978b-9b2e1f7a98dc",
         "hardwareProfile": {
             "vmSize": "Standard_B1s"
         },
@@ -19,20 +19,20 @@
             },
             "osDisk": {
                 "osType": "Linux",
-                "name": "G1-VM_OsDisk_1_5eb687dfe49f49d7bb4d1b233665592e",
+                "name": "iot-linux_OsDisk_1_d5b755a3d4634f628bc12e0567aa7061",
                 "createOption": "FromImage",
                 "caching": "ReadWrite",
                 "managedDisk": {
                     "storageAccountType": "Premium_LRS",
-                    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/G1-VM_group/providers/Microsoft.Compute/disks/G1-VM_OsDisk_1_5eb687dfe49f49d7bb4d1b233665592e"
+                    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/mqttLab2/providers/Microsoft.Compute/disks/iot-linux_OsDisk_1_d5b755a3d4634f628bc12e0567aa7061"
                 },
                 "diskSizeGB": 64
             },
             "dataDisks": []
         },
         "osProfile": {
-            "computerName": "G1-VM",
-            "adminUsername": "g1iot",
+            "computerName": "iot-linux",
+            "adminUsername": "iot",
             "linuxConfiguration": {
                 "disablePasswordAuthentication": false
             },
@@ -41,7 +41,7 @@
         "networkProfile": {
             "networkInterfaces": [
                 {
-                    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/G1-VM_group/providers/Microsoft.Network/networkInterfaces/g1-vm15",
+                    "id": "/subscriptions/a7ad799d-50ef-4cd2-a0f3-81a61b479ece/resourceGroups/mqttLab2/providers/Microsoft.Network/networkInterfaces/iot-linux489",
                     "properties": {
                         "deleteOption": "Detach"
                     }
