@@ -16,4 +16,7 @@ https://lettucemeet.com/l/Ow68q
 
 https://discord.gg/7AHSe2Kx
 
+# Youtube Channel 
+
+https://www.youtube.com/channel/UCciFlTcbMW0w1Z3Xx7gwjlg
 
