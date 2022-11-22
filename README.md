@@ -57,6 +57,14 @@ Index:
   <th> Mateus Santos  </th>
   <th> <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Instituto_Tecnol%C3%B3gico_de_Aeron%C3%A1utica_%28logo%29.png" alt="Instituto Tecnológico de Aeronáutica" width="80px" height="45px"> </th>
 </tr>
+<tr>
+  <th> Rafael Cassol  </th>
+  <th> <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Instituto_Tecnol%C3%B3gico_de_Aeron%C3%A1utica_%28logo%29.png" alt="Instituto Tecnológico de Aeronáutica" width="80px" height="45px"> </th>
+</tr>
+ <tr>
+  <th> Erick Coelho  </th>
+  <th> <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Instituto_Tecnol%C3%B3gico_de_Aeron%C3%A1utica_%28logo%29.png" alt="Instituto Tecnológico de Aeronáutica" width="80px" height="45px"> </th>
+</tr>
 
   </table>
 
