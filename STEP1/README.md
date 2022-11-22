@@ -127,7 +127,7 @@ The methodology of this project follows 4 steps:
   
 2.**Client and Edge stage:** Consits on the setup of the brokers and android client. 
   
-3.**Cloud stage:** Consists on the implementation of a cloud broker, and the integration of a SQL database into it.
+3.**Cloud stage:** Consists on the implementation of a cloud broker, and the integration of a SQL database into it, and representing the data from it into a dashboard.
   
 4.**Final presentation:** Consists on the presentation of the project in a workshop.
 
