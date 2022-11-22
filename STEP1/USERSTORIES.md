@@ -13,6 +13,8 @@ According to the situation description and motivations, we accorded to use the f
 
 -"As a flood survivor, I want a system that is efficient and easy to use, that work at 100% when is used"
 
+-"As a rescuer, I want a system that shows me in a way i can understand the severity of the survivor and their locations."
+
 
 ## Acceptance Criteria
 
@@ -20,3 +22,4 @@ According to the situation description and motivations, we accorded to use the f
 - The system should be sent using IoT concepts such as MQTT protocol (mosquitto, central and local brokers)
 - The message should contain the severity of the distress call, and the location of the caller with coordinates (latitude, altitude).
 - The system should be usable to any Android mobile devices.
+- The dashboard will show in a formal and understandable manner all the data recompiled in a database from the android app. 
