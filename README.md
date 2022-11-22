@@ -134,7 +134,7 @@ The methodology of this project follows 4 steps:
   
 1.**Project setup:** This step consists in setting up the github repository and project, adding the required files (user stories and README).
   
-2.**Client and Edge stage:** Consits on the setup of the brokers and android client. 
+2.**Client and Edge stage:** Consits on the setup of the brokers and android client. **Link to the broker video** (https://youtu.be/Bizd2bxhic4)
   
 3.**Cloud stage:** Consists on the implementation of a cloud broker, and the integration of a SQL database into it.
   
