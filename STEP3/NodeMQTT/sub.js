@@ -4,8 +4,8 @@ const mysql = require('mysql')
 const db = mysql.createConnection({
     host: "localhost",
     port: 3306,
-    user: 'luis',
-    password: 'password-sql',
+    user: 'root',
+    password: 'T0n1tO#313', // Change with ur sql database and port data
     database: 'events'
 })
 
