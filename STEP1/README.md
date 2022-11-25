@@ -16,11 +16,6 @@ Index:
   </tr>
   
   <tr>
-    <th> Victoria Rodríguez de León </th>
-  <th> <img src="https://www.enroll-u.com/_i/1/7/7/4ecd9be0-eec4-11e9-9992-0231b47980f0.jpeg" alt="Tecnológico de Monterrey" width="100px" height="45px"> </th>
-  </tr>
-  
-  <tr>
     <th> Antonio Machorro Herrera </th>
   <th> <img src="https://www.enroll-u.com/_i/1/7/7/4ecd9be0-eec4-11e9-9992-0231b47980f0.jpeg" alt="Tecnológico de Monterrey" width="100px" height="45px"> </th>
   </tr>
