@@ -11,9 +11,14 @@ According to the situation description and motivations, we accorded to use the f
 
 - "As a flood survivor, I want the system to be able to determine which course of action is best for my situation, sending the appropriate resources depending on the type of damages that occurred."
 
+
+## Dashboard Requirements
+
 -"As a flood survivor, I want a system that is efficient and easy to use, that work at 100% when is used"
 
 -"As a rescuer, I want a system that shows me in a way i can understand the severity of the survivor and their locations."
+
+-"As an operator, I want the system to have a clear interface that lets me view the current rescue signals, as well as past ones in order to more effectively understand the cause for these disasters."
 
 
 ## Acceptance Criteria
