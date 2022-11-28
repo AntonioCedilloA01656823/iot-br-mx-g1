@@ -3,7 +3,14 @@ import random
 from tkinter import *
 from paho.mqtt import client as mqtt_client
 
-#Python App
+# Python App
+
+topic = "srv/severity"
+client_id = f'app-mqtt-{random.randint(0, 100)}'
+username = 's2'
+password = 's2987654321'
+
+
 class Application:
     def __init__(self, master=None):
         self.fontePadrao = ("Arial", "10")
@@ -71,14 +78,13 @@ class Application:
         self.tittle["font"] = ("Arial", "10", "bold")
         self.tittle.pack()
 
-
-        self.r1 = Radiobutton(self.sixContainer, text="Low", variable=var, value=1,command=self.sel)
+        self.r1 = Radiobutton(self.sixContainer, text="Low", variable=var, value=1, command=self.sel)
         self.r1.pack(side=LEFT)
 
-        self.r2 = Radiobutton(self.sixContainer, text="Middle", variable=var, value=2,command=self.sel)
+        self.r2 = Radiobutton(self.sixContainer, text="Middle", variable=var, value=2, command=self.sel)
         self.r2.pack(side=LEFT)
 
-        self.r3 = Radiobutton(self.sixContainer, text="High", variable=var, value=3,command=self.sel)
+        self.r3 = Radiobutton(self.sixContainer, text="High", variable=var, value=3, command=self.sel)
         self.r3.pack(side=RIGHT)
 
         self.update = Button(self.sevenContainer)
@@ -88,10 +94,12 @@ class Application:
         self.update["command"] = self.update_function
         self.update.pack()
 
+
+
     def connect_function(self):
         brokerIP = self.brokerIP.get()
         brokerPort = self.brokerPort.get()
-        print(brokerIP+":"+brokerPort)
+        print(brokerIP + ":" + brokerPort)
 
     def sel(self):
         selection = "You selected the option " + str(var.get())
@@ -100,9 +108,42 @@ class Application:
     def update_function(self):
         print(1)
 
+    def connect_mqtt(self) -> mqtt_client:
+        def on_connect(client, userdata, flags, rc):
+            if rc == 0:
+                print("Connected to MQTT Broker!")
+            else:
+                print("Failed to connect, return code %d\n", rc)
+
+        broker = self.brokerIP.get()
+        port = self.brokerPort.get()
+        client = mqtt_client.Client(client_id)
+        client.username_pw_set(username, password)
+        client.on_connect = on_connect
+        client.connect(broker, port)
+        return client
+
+
+    def subscribe(client: mqtt_client):
+        def on_message(client, userdata, msg):
+            print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+
+        client.subscribe(topic)
+        client.on_message = on_message
+
+
+
+
+
+    def run(self):
+        client = connect_mqtt()
+        subscribe(client)
+        client.loop_forever()
 
 
 root = Tk()
 var = IntVar()
 Application(root)
 root.mainloop()
+run(self)
+
