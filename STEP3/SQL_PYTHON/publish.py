@@ -2,6 +2,9 @@ import random
 import time
 import math
 from paho.mqtt import client as mqtt_client
+from faker import Faker
+fake = Faker()
+Faker.seed(0)
 
 
 broker = '20.196.200.98'
@@ -25,9 +28,13 @@ def connect_mqtt():
 def publish(client):
     msg_count = 0
     while True:
-        time.sleep(1)
-        severity = math.ceil(random.randint(0, 3))
-        msg = f"Severity: {severity}"
+        time.sleep(0.1)
+        severity = math.ceil(random.randint(1, 3))
+        fake_local_latlng = fake.local_latlng(country_code='BR')
+        fake_lat = float(fake_local_latlng[0])
+        fake_lng = float(fake_local_latlng[1])
+
+        msg = f"Severity: {severity} Latitude: {fake_lat} Longitude: {fake_lng}"
         result = client.publish(topic, msg)
         # result: [0, 1]
         status = result[0]

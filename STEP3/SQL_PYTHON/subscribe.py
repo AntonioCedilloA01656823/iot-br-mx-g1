@@ -4,8 +4,9 @@ import mysql.connector
 
 db = mysql.connector.connect(
     host="localhost",
+    port=13306,
     user="root",
-    passwd="T0n1tO#313",
+    passwd="iotbrmx1", #"T0n1tO#313", 
     database="eq1Events"
 
 )
@@ -13,8 +14,8 @@ db = mysql.connector.connect(
 print("Connection to database sucessful!")
 myCursor = db.cursor()
 # myCursor.execute("CREATE DATABASE eq1Events") Database for the project created
-#myCursor.execute("CREATE TABLE Requests (ipAdress VARCHAR(20), clientId VARCHAR(20) PRIMARY KEY, severity VARCHAR(10),latitude int,altitude int )")
-#myCursor.execute("DESCRIBE Requests")
+#myCursor.execute("CREATE TABLE Events (ipAdress VARCHAR(20), clientId VARCHAR(20), severity VARCHAR(10),latitude float,altitude float,   ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)")
+#myCursor.execute("DESCRIBE Events")
 
 
 
@@ -24,7 +25,6 @@ topic = "srv/severity"
 client_id = f'appmqtt-eq1-{random.randint(0, 100)}'
 username = 's2'
 password = 's2987654321' #Change with ur mosquitto password and user
-
 
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
@@ -48,14 +48,12 @@ def subscribe(client: mqtt_client):
         svdata = data[1]
 
         latstr = data[3]
-        latdata = int(latstr)
+        latdata = float(latstr)
 
         altstr = data[5]
-        altdata = int(altstr)
-
-        myCursor.execute("INSERT INTO Events(ipAdress,clientId,severity,latitude,altitude) VALUES(%s,%s,%s,%s,%s),(broker, client_id, svdata, latdata, altdata)")
-
-
+        altdata = float(altstr)
+        myCursor.execute(f"INSERT INTO Events(ipAdress,clientId,severity,latitude,altitude) VALUES('{broker}', '{client_id}', '{svdata}', {latdata}, {altdata});")
+        db.commit()
     client.subscribe(topic)
     client.on_message = on_message
 
