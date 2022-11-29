@@ -1,15 +1,10 @@
 import random
+import time
 
-from tkinter import *
+from tkinter import * #publish is being used
 from paho.mqtt import client as mqtt_client
 
-# Python App
-
-topic = "srv/severity"
-client_id = f'app-mqtt-{random.randint(0, 100)}'
-username = 's2'
-password = 's2987654321'
-
+#still has some errors. 
 
 class Application:
     def __init__(self, master=None):
@@ -68,7 +63,9 @@ class Application:
 
         self.connect["font"] = ("Calibri", "8")
         self.connect["width"] = 12
-        self.connect["command"] = self.connect_function
+        self.connect["command"] = self.connect_function #call connect to change to return a client
+        client = self.connect_function()
+        client.loop_start()
         self.connect.pack()
 
         self.mensagem = Label(self.forthContainer, text="", font=self.fontePadrao)
@@ -78,72 +75,65 @@ class Application:
         self.tittle["font"] = ("Arial", "10", "bold")
         self.tittle.pack()
 
-        self.r1 = Radiobutton(self.sixContainer, text="Low", variable=var, value=1, command=self.sel)
+
+        self.r1 = Radiobutton(self.sixContainer, text="Low", variable=var, value=1,command=self.sel)
         self.r1.pack(side=LEFT)
 
-        self.r2 = Radiobutton(self.sixContainer, text="Middle", variable=var, value=2, command=self.sel)
+        self.r2 = Radiobutton(self.sixContainer, text="Middle", variable=var, value=2,command=self.sel)
         self.r2.pack(side=LEFT)
 
-        self.r3 = Radiobutton(self.sixContainer, text="High", variable=var, value=3, command=self.sel)
+        self.r3 = Radiobutton(self.sixContainer, text="High", variable=var, value=3,command=self.sel)
         self.r3.pack(side=RIGHT)
 
         self.update = Button(self.sevenContainer)
         self.update["text"] = "Update"
         self.update["font"] = ("Calibri", "8")
         self.update["width"] = 12
-        self.update["command"] = self.update_function
+        self.update["command"] = self.update_function(client) #publish
         self.update.pack()
-
-
 
     def connect_function(self):
         brokerIP = self.brokerIP.get()
         brokerPort = self.brokerPort.get()
-        print(brokerIP + ":" + brokerPort)
+        topic = "srv/severity"
+        client_id = f'python-client-{random.randint(0,1000)}'
+        print(brokerIP+":"+brokerPort)
+        print(topic+",client id:"+client_id)
+
+        def on_connect(client, userdata, flags, rc):
+            if rc == 0:
+                print("Connected succesfully to the MQTT Broker.")
+            else:
+                print("Failed to connect, return code:"+rc)
+
+        client = mqtt_client.Client(client_id)
+        client.on_connect = on_connect
+        client.connect(brokerIP,brokerPort)
+        return client
 
     def sel(self):
         selection = "You selected the option " + str(var.get())
         print(selection)
 
-    def update_function(self):
+    def update_function(self, client):
         print(1)
-
-    def connect_mqtt(self) -> mqtt_client:
-        def on_connect(client, userdata, flags, rc):
-            if rc == 0:
-                print("Connected to MQTT Broker!")
+        msg_count = 0
+        while True:
+            time.sleep(1)
+            severity = str(var.get())
+            msg = f"severity: {severity}"
+            topic = "srv/severity"
+            result = client.publish(topic, msg)
+            status = result[0]
+            if status == 0:
+                print(f"Send {msg} to topic {topic}")
             else:
-                print("Failed to connect, return code %d\n", rc)
+                print(f"Failed to send message to topic {topic}")
+            msg_count +=1
 
-        broker = self.brokerIP.get()
-        port = self.brokerPort.get()
-        client = mqtt_client.Client(client_id)
-        client.username_pw_set(username, password)
-        client.on_connect = on_connect
-        client.connect(broker, port)
-        return client
-
-
-    def subscribe(client: mqtt_client):
-        def on_message(client, userdata, msg):
-            print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-
-        client.subscribe(topic)
-        client.on_message = on_message
-
-
-
-
-
-    def run(self):
-        client = connect_mqtt()
-        subscribe(client)
-        client.loop_forever()
 
 
 root = Tk()
 var = IntVar()
 Application(root)
 root.mainloop()
-run(self)
-
