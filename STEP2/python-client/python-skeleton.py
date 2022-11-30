@@ -1,10 +1,10 @@
+#udpated, DEFINITIVE VERSION, only issue is that the app might crash sometimes. 
+
 import random
 import time
 
-from tkinter import * #publish is being used
 from paho.mqtt import client as mqtt_client
-
-#still has some errors. 
+from tkinter import *
 
 class Application:
     def __init__(self, master=None):
@@ -64,8 +64,6 @@ class Application:
         self.connect["font"] = ("Calibri", "8")
         self.connect["width"] = 12
         self.connect["command"] = self.connect_function #call connect to change to return a client
-        client = self.connect_function()
-        client.loop_start()
         self.connect.pack()
 
         self.mensagem = Label(self.forthContainer, text="", font=self.fontePadrao)
@@ -89,49 +87,62 @@ class Application:
         self.update["text"] = "Update"
         self.update["font"] = ("Calibri", "8")
         self.update["width"] = 12
-        self.update["command"] = self.update_function(client) #publish
+        self.update["command"] = self.update_function #publish
         self.update.pack()
 
     def connect_function(self):
         brokerIP = self.brokerIP.get()
         brokerPort = self.brokerPort.get()
-        topic = "srv/severity"
-        client_id = f'python-client-{random.randint(0,1000)}'
-        print(brokerIP+":"+brokerPort)
-        print(topic+",client id:"+client_id)
+        brokerPort = int(brokerPort)
+        print(brokerIP)
+        print(brokerPort)
+
+        self.client_id = f'python-client-{random.randint(0, 1000)}'
 
         def on_connect(client, userdata, flags, rc):
-            if rc == 0:
-                print("Connected succesfully to the MQTT Broker.")
-            else:
-                print("Failed to connect, return code:"+rc)
+                if rc == 0:
+                    print("Connected to MQTT Broker!")
+                else:
+                    print("Failed to connect, return code %d\n", rc)
 
-        client = mqtt_client.Client(client_id)
-        client.on_connect = on_connect
-        client.connect(brokerIP,brokerPort)
-        return client
+        self.client = mqtt_client.Client(self.client_id)
+        # client.username_pw_set(username, password)
+        self.client.on_connect = on_connect
+        self.client.connect(brokerIP, brokerPort)
+        self.client.loop_start()
+
 
     def sel(self):
         selection = "You selected the option " + str(var.get())
+        self.severity = var.get() # 1 to 3
         print(selection)
+        if self.severity == 1:
+            self.severityText = "Low"
+        elif self.severity == 2:
+            self.severityText = "Medium"
+        elif self.severity == 3:
+            self.severityText = "High"
+        else:
+            self.severityText = "None"
 
-    def update_function(self, client):
+
+    def update_function(self):
         print(1)
         msg_count = 0
+        topic = "srv/severity"
+        latitude = random.randint(16, 19)
+        altitude = random.randint(96, 99)
         while True:
             time.sleep(1)
-            severity = str(var.get())
-            msg = f"severity: {severity}"
-            topic = "srv/severity"
-            result = client.publish(topic, msg)
+            msg = f"{self.client_id}:{self.severityText}:{latitude}:{altitude}"
+            result = self.client.publish(topic, msg)
+            # result: [0, 1]
             status = result[0]
             if status == 0:
-                print(f"Send {msg} to topic {topic}")
+                print(f"Send `{msg}` to topic `{topic}`")
             else:
                 print(f"Failed to send message to topic {topic}")
-            msg_count +=1
-
-
+            msg_count += 1
 
 root = Tk()
 var = IntVar()
