@@ -4,7 +4,7 @@ import time
 from paho.mqtt import client as mqtt_client
 
 broker = 'localhost'
-port = 1883
+port = 1882
 topic = "srv/temperature"
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 
