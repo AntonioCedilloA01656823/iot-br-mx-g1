@@ -20,7 +20,7 @@ myCursor = db.cursor()
 
 
 broker = '20.196.200.98' #change with ur virtual machine IP adress
-port = 1882
+port = 1883
 topic = "srv/severity"
 client_id = f'appmqtt-eq1-{random.randint(0, 100)}'
 username = 's2'

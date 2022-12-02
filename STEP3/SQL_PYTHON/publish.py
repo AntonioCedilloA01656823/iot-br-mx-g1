@@ -8,7 +8,7 @@ Faker.seed(0)
 
 
 broker = '20.196.200.98'
-port = 1882
+port = 1883
 topic = "srv/severity"
 client_id = f'python-mqtt-sql-{random.randint(0, 1000)}'
 
